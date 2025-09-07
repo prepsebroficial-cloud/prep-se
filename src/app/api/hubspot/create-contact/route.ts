@@ -34,7 +34,6 @@ export async function POST(request: NextRequest) {
           lastname: name.split(' ').slice(1).join(' ') || '',
           consent: consent,
           source: 'prepse',
-          last_contact_date: new Date().toISOString(),
         }
       })
 
