@@ -3,6 +3,9 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { motion } from 'framer-motion'
+import Image from "next/image";
+import Link from "next/link";
+
 
 interface HeaderProps {
   className?: string
@@ -30,9 +33,23 @@ export function Header({ className }: HeaderProps) {
             <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">P</span>
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
-              Prep-se
-            </span>
+            {/* Logo clicável */}
+<motion.div
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  className="flex items-center space-x-2 hover:opacity-80 transition-opacity cursor-pointer"
+>
+  <Link href="/">
+    <Image
+      src="/logo.svg"
+      alt="Prep-se Logo"
+      width={140}
+      height={40}
+      priority
+    />
+  </Link>
+</motion.div>
+
           </motion.a>
 
           {/* Navigation */}
