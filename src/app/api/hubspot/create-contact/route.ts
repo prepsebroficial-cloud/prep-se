@@ -57,8 +57,7 @@ export async function POST(request: NextRequest) {
           firstname: name.split(' ')[0],
           lastname: name.split(' ').slice(1).join(' ') || '',
           consent: consent,
-          source: 'prepse',
-          created_date: new Date().toISOString(),
+          source: 'prepse'
         }
       })
 
